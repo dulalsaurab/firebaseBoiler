@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<script src="{% static "/js/jquery.min.js" %}"></script>
+<!-- login starts
+================================================== -->
+<div class="row">
+<div class="col-lg-4 offset-md-4 col-md-4 offset-md-4 col-sm-6 offset-md-4">
+  <div id="registerOff" href="" value="sin">
+    <h1 class="text-muted text-center">Sign up</h1>
+    <p class="text-xs-center">No account?<a class="" href="javascript:registerLogin('sin')" > Register</a></p>
+
+  <form method="POST" action="/awt/postSingin/" novalidate="" id="login">
+    {% csrf_token %}
+    <input id="csrf_token" name="csrf_token" type="hidden" value="IjgxNTU4YzJkZTJiMGQxYjJhMzViNzgyMWIzM2FlNjkwYTVhNjk5Nzki.DTRgnA.vYEs7m0Cyy4WcUa8ZocvgTxXbDo">
+      <input id="next_url" name="next_url" type="hidden" value="/">
+
+    <!-- <input class="hide" id="remember" name="remember" type="checkbox" value="y"> -->
+      <div class="form-group">
+      <label class="control-label" for="email">Email</label>
+        <input autofocus="" class="form-control input-lg" id="email" name="email" type="email" value="">
+    </div>
+      <div class="form-group ">
+      <label class="control-label" for="password">Password</label>
+        <input autocomplete="off" class="form-control" id="password" name="password" type="password" value="">
+      </div>
+      <button class="btn btn-primary pull-right" type="submit">Sign in</button>
+      <br></br>
+      <hr>
+  </form>
+</div>
+
+  <div id="registerOn" style="display: none;" value="reg">
+    <h1 class="text-muted text-center">Register</h1>
+    <p class="text-xs-center">Already have one?<a class="" href="javascript:registerLogin('reg')" > Login</a></p>
+  <form method="POST" action="/awt/postSingin/" novalidate="" id="register">
+    {% csrf_token %}
+    <input id="csrf_token" name="csrf_token" type="hidden" value="IjgxNTU4YzJkZTJiMGQxYjJhMzViNzgyMWIzM2FlNjkwYTVhNjk5Nzki.DTRgnA.vYEs7m0Cyy4WcUa8ZocvgTxXbDo">
+      <input id="next_url" name="next_url" type="hidden" value="/">
+
+    <!-- <input class="hide" id="remember" name="remember" type="checkbox" value="y"> -->
+      <div class="form-group">
+      <label class="control-label" for="email">Name</label>
+        <input autofocus="" class="form-control input-lg" id="email" name="email" type="email" value="">
+      </div>
+      <div class="form-group">
+      <label class="control-label" for="email">Email</label>
+        <input autofocus="" class="form-control input-lg" id="email" name="email" type="email" value="">
+      </div>
+      <div class="form-group ">
+      <label class="control-label" for="password">Password</label>
+        <input autocomplete="off" class="form-control" id="password" name="password" type="password" value="">
+      </div>
+      <button class="btn btn-primary pull-right" type="submit">Sign in</button>
+      <br></br>
+      <hr>
+  </form>
+</div>
+<!-- this is a firebase login form end -->
+    <div class="text-center">
+      <!-- {% csrf_token %} -->
+      <a class="btn btn-block btn-social btn-google" href="#" title="Sign in with Google" rel="nofollow" id="google_login">
+        <span class="fa fa-google"></span>Login in with Google
+      </a>
+      <a class="btn btn-block btn-social btn-facebook" href="#" rel="nofollow" id="facebook_login">
+        <span class="fa fa-facebook"></span> Login in with Facebook
+      </a>
+      <!-- <a class="btn btn-block btn-social btn-twitter">
+        <span class="fa fa-twitter"></span> Login in with Twitter
+      </a> -->
+    </div>
+  <!-- <div class="form-group">
+    <div class="btn-group btn-group-justified form-control-static">
+      <a class="btn btn-link btn-xs ellipsis" href="/user/forgot/">Forgot password?</a>
+      <a class="btn btn-link btn-xs ellipsis" href="/signup/?next=%2F">Create new account</a>
+    </div>
+  </div> -->
+        <hr>
+        <div class="checkbox remember pull-right">
+          <label><input type="checkbox" checked="">Keep me signed in</label>
+        </div>
+      </div>
+    </div>
+
+  <!-- login ends
+  ================================================== -->
+
+  <script>
+      function registerLogin(type){
+        if(type=='sin'){
+          document.getElementById("registerOff").style.display="none";
+          document.getElementById("registerOn").style.display="block";
+        }
+        else{
+          document.getElementById("registerOff").style.display="block";
+          document.getElementById("registerOn").style.display="none";
+          }
+      }
+  </script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script> -->
+
+<script>
+  $('#google_login').click(function(){
+  //submit the request to the back end
+  // signIn();
+  // postData =  {csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value, googleAwth: "True"};
+  // $.post("localhost:8000/awt/postSingin/", postData);
+
+  // $.ajax({
+  //     url: "{% url "/awt/postSingin/" %}",
+  //     type: 'POST',
+  //     data: {csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value, googleAwth: "True"},
+  //     // If sucess, download file
+  //     success: function(data, status, xhr) {
+  //           console.log(data;
+  //     }
+  // });
+
+  });
+  $('#facebook_login').click(function(){
+  //submit the request to the back end
+  });
+</script>
+
+
+<script>
+    $(window).on('load', function(){
+      var a = {% if registerOn %}true{% endif %}; //check if registration form is true or not
+      if(a){
+        document.getElementById("registerOff").style.display="none";
+        document.getElementById("registerOn").style.display="block";
+      }
+    });
+
+</script>
+{% endblock %}

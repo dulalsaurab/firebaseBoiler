@@ -1,0 +1,389 @@
+
+{% extends "base.html" %}
+{% block content %}
+<script>
+    $( document ).ready(function() {
+        if(firebase.auth().currentUser == null) {
+          document.location.href = "/";
+        }
+        // else {
+        //   $('#myModal').modal('show');
+        // }
+
+      //   firebase.auth().onAuthStateChanged(function(user) {
+			//   if (user) {
+			//     // User is signed in.
+			// 		showWelcomeContainer();
+			//   } else {
+      //
+			// 		$("#dropdown_loggedin_nav").hide();
+			// 		$("#login_nav").show();
+			// 			// document.getElementById("upload").addEventListener('change', handleFileSelect, false);
+			// 		// No user is signed in.
+			//   }
+			// });
+});
+</script>
+<!-- ================================================== -->
+
+<!-- Begin Top Author Page
+================================================== -->
+<!-- <div class="container">
+	<div class="row">
+		<div class="col-md-2"></div>
+    <div class="col-md-8 col-md-offset-2">
+		<div class="mainheading">
+			<div class="row post-top-meta authorpage">
+					<div class="col-md-10 col-xs-12">
+							<h1>Sal</h1>
+							<span class="author-description">Nobol Niraula <a target="_blank" href="#">NepaliSahitya.com</a> and creator of <strong>"Nepali Sahitya"</strong> torem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
+              <div class="sociallinks"><a  target="_blank" href="#"><i class="fa fa-facebook"></i></a> <span class="dot"></span> <a target="_blank" href="https://plus.google.com/s/wowthemesnet/top"><i class="fa fa-google-plus"></i></a></div>
+              <a target="_blank" href="#" class="btn follow">Follow</a>
+					</div>
+          <div class="col-md-2 col-xs-12">
+					<img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal">
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div> -->
+<!-- End Top Author Meta
+================================================== -->
+
+<!-- Begin Author Posts
+================================================== -->
+<!-- <div class="graybg authorpage">
+	<div class="container">
+		<div class="listrecent listrelated"> -->
+
+				<!-- begin post -->
+				<!-- <div class="authorpostbox">
+					<div class="card">
+						<a href="author.html">
+						<img class="img-fluid img-thumb" src="assets/img/demopic/8.jpg" alt="">
+						</a>
+						<div class="card-block">
+							<h2 class="card-title"><a href="post.html">Life is worth living forever and ever</a></h2>
+              <h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+            	<div class="metafooter">
+								<div class="wrapfooter">
+									<span class="meta-footer-thumb">
+									<a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+									</span>
+									<span class="author-meta">
+									<span class="post-name"><a href="author.html">Sal</a></span><br/>
+									<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+									</span>
+									<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> -->
+				<!-- end post -->
+
+				<!-- begin post -->
+		    <!-- <div class="authorpostbox">
+					<div class="card">
+		        <a href="author.html">
+		        <img class="img-fluid img-thumb" src="assets/img/demopic/10.jpg" alt="">
+		        </a>
+		        <div class="card-block">
+		          <h2 class="card-title"><a href="post.html">Best European capitals to visit and the costs implied</a></h2>
+              <h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+              <div class="metafooter">
+		            <div class="wrapfooter">
+		              <span class="meta-footer-thumb">
+		              <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+		              </span>
+		              <span class="author-meta">
+		              <span class="post-name"><a href="author.html">Sal</a></span><br/>
+		              <span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+		              </span>
+		              <span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+		            </div>
+		          </div>
+		        </div>
+					</div>
+		    </div> -->
+				<!-- end post -->
+
+				<!-- begin post -->
+		    <!-- <div class="authorpostbox">
+					<div class="card">
+		        <a href="author.html">
+		        <img class="img-fluid img-thumb" src="assets/img/demopic/9.jpg" alt="">
+		        </a>
+		        <div class="card-block">
+		          <h2 class="card-title"><a href="post.html">10 Things you should learn before visiting</a></h2>
+              <h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+              <div class="metafooter">
+		            <div class="wrapfooter">
+		              <span class="meta-footer-thumb">
+		              <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+		              </span>
+		              <span class="author-meta">
+		              <span class="post-name"><a href="author.html">Sal</a></span><br/>
+		              <span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+		              </span>
+		              <span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+		            </div>
+		          </div>
+		        </div>
+					</div>
+		    </div> -->
+				<!-- end post -->
+
+		<!-- </div>
+	</div>
+</div> -->
+<!-- End Author Posts
+================================================== -->
+
+<!-- Begin Twitter Timeline
+================================================== -->
+<!-- <div class="container margtop3rem">
+<a class="twitter-grid" href="https://twitter.com/TwitterDev/timelines/539487832448843776">WowThemesNet Tweets</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div> -->
+<!-- End Twitter Timeline
+================================================== -->
+<style>
+.profile-page .user-info {
+    text-align: center;
+    background: #f3f3f3;
+    padding: 2rem 0 1rem 0;
+}
+.profile-page .user-info h4 {
+    font-weight: 700;
+}
+.profile-page .user-info .action-btn {
+    float: right;
+    color: #999;
+    border: 1px solid #999;
+}
+main.css:2128
+.btn-sm, .btn-group-sm > .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem;
+}
+main.css:1955
+.btn-outline-secondary {
+    color: #ccc;
+    background-image: none;
+    background-color: transparent;
+    border-color: #ccc;
+}
+main.css:1701
+.btn {
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+}
+
+.nav-pills.outline-active .nav-link.active {
+    background: #fff !important;
+    border-bottom: 2px solid #5CB85C !important;
+    color: #5CB85C !important;
+}
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.profile-page .user-info .user-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+}
+.article-preview {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+}
+.article-preview .preview-link h1 {
+    font-weight: 600 !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 3px;
+}
+.article-preview .preview-link p {
+    font-weight: 300;
+    font-size: 24px;
+    color: #999;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.3rem;
+}
+.article-preview .article-meta {
+    margin: 0 0 1rem 0;
+}
+.preview-link {
+    color: inherit !important;
+}
+article-meta .info .author {
+    display: block;
+    font-weight: 500 !important;
+}
+.article-meta img {
+    display: inline-block;
+    vertical-align: middle;
+    height: 32px;
+    width: 32px;
+    border-radius: 30px;
+}
+.btn-sm, .btn-group-sm > .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem;
+}
+main.css:1733
+.btn-primary {
+    color: #fff;
+    background-color: #5CB85C;
+    border-color: #5CB85C;
+}
+.article-preview .preview-link h1 {
+    font-weight: 600 !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 3px;
+	}
+.article-preview .preview-link span {
+    max-width: 30%;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #bbb;
+    vertical-align: middle;
+}
+.pull-xs-right {
+		float: right !important;
+	}
+.article-meta .info .date {
+	    color: #bbb;
+	    font-size: 0.8rem;
+}
+.article-meta .info {
+    margin: 0 1.5rem 0 0.3rem;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1rem;
+}
+.article-meta .info .date {
+    color: #bbb;
+    font-size: 0.8rem;
+    display: block;
+}
+.nav-pills::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+ul.tag-list {
+    padding-left: 0px !important;
+    display: inline-block;
+    list-style: none !important;
+}
+.tag-default.tag-outline {
+    border: 1px solid #ddd;
+    color: #aaa !important;
+    background: none !important;
+}
+ul.tag-list li {
+    display: inline-block !important;
+}
+.tag-default {
+    color: #fff !important;
+    font-size: 0.8rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    white-space: nowrap;
+    margin-right: 3px;
+    margin-bottom: 0.2rem;
+    display: inline-block;
+}
+.tag-default {
+    background-color: #818a91;
+}
+.tag-pill {
+    padding-right: 0.6em;
+    padding-left: 0.6em;
+    border-radius: 10rem;
+}
+</style>
+      <div data-reactroot="">
+         <div class="profile-page">
+            <div class="user-info">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-xs-12 col-md-10 offset-md-1">
+                        <img src="" class="user-img">
+                        <h4>sdulal</h4>
+                        <p></p>
+                        <a class="btn btn-sm btn-outline-secondary action-btn" href="/awt/editProfile">
+                           <i class="ion-gear-a"></i><!-- react-text: 667 --> Edit Profile Settings<!-- /react-text -->
+                        </a>
+                        <!-- react-empty: 668 -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="container">
+               <div class="row">
+                  <div class="col-xs-12 col-md-10 offset-md-1">
+                     <div class="articles-toggle" style="margin-top: 10px;">
+                        <ul class="nav nav-pills outline-active">
+                           <li class="nav-item"><a class="nav-link active" href="#@sdulal">My Articles</a></li>
+                           <li class="nav-item"><a class="nav-link " href="#@sdulal/favorites">Favorited Articles</a></li>
+                        </ul>
+                     </div>
+                     <div>
+                        <div class="article-preview" >
+                           <div class="article-meta">
+                              <a class="" href="#@abcd222"><img src="https://static.productionready.io/images/smiley-cyrus.jpg"></a>
+                              <div class="info"><a class="author" href="#@abcd222">abcd222</a><span class="date">Sat Dec 16 2017</span></div>
+                              <div class="pull-xs-right">
+                                 <button class="btn btn-sm btn-primary">
+                                    <i class="fa fa-heart" aria-hidden="true">1</i>
+                                 </button>
+                              </div>
+                           </div>
+                           <a class="preview-link" style="text-decoration: none;" href="#article/this-is-very-similar-to-the-rails-tutorial-yz8a0i">
+                              <h1>This is very similar to the rails tutorial</h1>
+                              <p>rails</p>
+                              <span>Read more...</span>
+                              <ul class="tag-list pull-right">
+																<li class="tag-default tag-pill tag-outline">pissers</li>
+																<li class="tag-default tag-pill tag-outline">fingerfuckers</li>
+																<li class="tag-default tag-pill tag-outline">Jesusfuck</li>
+																<li class="tag-default tag-pill tag-outline">tittiefuck</li>
+																<li class="tag-default tag-pill tag-outline">motherfuck</li>
+																<li class="tag-default tag-pill tag-outline">cocksucking</li></ul>
+                           </a>
+                        </div>
+                        <!-- react-empty: 696 -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+   <script src="main.js"></script>
+
+
+
+</body>
+
+{% endblock %}

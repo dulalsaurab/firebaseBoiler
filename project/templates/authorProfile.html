@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+  border-style: solid none;
+  /* border-width: 1px 0; */
+  /* margin: 40px 0; */
+}
+.article-preview {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+}
+</style>
+
+    <div class="container">
+      <div class="row" style="margin-top: 60px; margin-bottom: 30px">
+          <div class="text-center col-md-12">
+            <h1 class="display-5 text-center"><b>Settings</b></h1>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-8 offset-md-2 article-preview ">
+              <p class="" style="margin-bottom: 0.2rem;"><b>Your email</b></p>
+              <span>dulal.saurab@gmail.com</span>
+              <button type="submit" class="btn btn-secondary btn-sm pull-right">Edit email</button>
+              <!-- <span class="display-8 pull-left"><b>dulal.saurab@gmail.com</b></span> -->
+          </div>
+          <div class="col-md-8 offset-md-2 article-preview ">
+              <p class="" style="margin-bottom: 0.2rem;"><b>Your username</b></p>
+              <span>dulalsaurab</span>
+              <button type="submit" class="btn btn-secondary btn-sm pull-right">Edit username</button>
+              <!-- <span class="display-8 pull-left"><b>dulal.saurab@gmail.com</b></span> -->
+          </div>
+          <div class="col-md-8 offset-md-2 article-preview ">
+              <p class="" style="margin-bottom: 0.2rem;"><b>Short Bio</b></p>
+              <div class="row">
+                <div class="col-md-10">
+                  <span>Lorem Ipsum is simply dummy text of the printing
+                    and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen book.</span>
+                </div>
+                <div class="col-md-2">
+                <button type="submit" class="btn btn-secondary btn-sm pull-right">Edit bio</button>
+                </div>
+              </div>
+              <!-- <span class="display-8 pull-left"><b>dulal.saurab@gmail.com</b></span> -->
+          </div>
+      </div>
+
+    </div>
+
+
+{% endblock %}

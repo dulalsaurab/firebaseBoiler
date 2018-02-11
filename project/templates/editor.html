@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+{% block content %}
+<!-- start title -->
+<div class="container text-center">
+  <div class="mainheading">
+  	<h3 class="sitetitle" style="">नेपाली साहित्या</h3>
+  	<p class="lead">
+  		 Nepali Sahitya rachana ko sangam isthal
+  	</p>
+  </div>
+</div>
+<!-- End title
+================================================== -->
+<div class="row">
+  <div class="col-md-10 offset-md-1 col-xs-12">
+    <form method="POST" class="post-form">{% csrf_token %}
+      <fieldset>
+        <fieldset class="form-group">
+          {{ form.title }}
+        </fieldset>
+        <fieldset class="form-group">
+          {{ form.shortInfo }}
+        </fieldset>
+        <fieldset class="form-group">
+          {{ form.media }}
+          {{ form.text }}
+        </fieldset>
+        <fieldset class="form-group">
+          {{ form.tags }}
+          <div class="tag-list"></div>
+        </fieldset>
+        <button class="btn btn-primary pull-right" type="submit">Publish Article</button>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<style>
+  .django-ckeditor-widget{
+    width: 100% !important;
+  }
+</style>
+{% endblock %}
