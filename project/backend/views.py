@@ -32,11 +32,7 @@ def editor(request):
                         "content": article
                     }
                     results = db.child("posts").push(data, user[request.session['token']])
-
-                    print(request.session['token'])
-                    return HttpResponse("You are logged in")
             except Exception as e:
-                print(e)
                 return HttpResponse("You are not logged in")
 
     # if a GET (or any other method) we'll create a blank form
@@ -44,13 +40,14 @@ def editor(request):
         form = editorForms()
         try:
             if request.session['email']:
-                user = {'userNmae':request.POST['email'], 'email': request.POST['email']}
-                context = {'userData': user}
-                data = {'userData': 'session found', 'form':form }
-        except:
-            data = {'form': form}
+                # user = {'userNmae':request.session['email'], 'email': request.session['email']}
+                # context = {'userData': user}
+                data = {'userNmae':request.session['email'], 'email': request.session['email'], 'form':form }
+                context = {'userData': data}
+        except Exception as e:
+            context = {'form': form}
 
-    return render(request, 'editor.html', data)
+    return render(request, 'editor.html', context)
 
 
 def articleHandler(request):
@@ -87,4 +84,7 @@ def post_page(request):
     return render(request, 'post.html', articleJson)
 
 def author_profile(request):
-    return render(request, 'author.html')
+    user = {'userNmae':request.session['email'], 'email': request.session['email']}
+    context = {'userData': user}
+
+    return render(request, 'author.html', context)

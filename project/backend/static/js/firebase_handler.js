@@ -7,20 +7,18 @@ $( document ).ready(function() {
 				firebase.auth().onAuthStateChanged(function(user) {
 			  if (user) {
 			    // User is signed in.
-					showWelcomeContainer();
 			  } else {
-
 					// $("#dropdown_loggedin_nav").hide();
 					// $("#login_nav").show();
 						// document.getElementById("upload").addEventListener('change', handleFileSelect, false);
 					// No user is signed in.
 			  }
+
 			});
 });
 
-function signIn() {
+function signIn(callback) {
 	firebase.auth().signInWithPopup(provider).then(function(result) {
-		alert("reached here")
 	  // This gives you a Google Access Token. You can use it to access the Google API.
 	  var token = result.credential.accessToken;
 	  // The signed-in user info.
@@ -39,6 +37,8 @@ function signIn() {
 	// if(document.location.toString().indexOf('?')!= -1){
 		// document.location.href="/?noreload";
 	// }
+	console.log("a");
+	callback();
 };
 
 function signOut(){

@@ -31,12 +31,10 @@ auth = firebase.auth()
 
 def postSingin(request):
     if request.method == 'POST':
-        print("Didnt reached here")
         try:
             if (request.POST['googleAwth']):
-                print("I reached inside googleAwth")
                 # got user data here, now lets get user credentials
-                idToken = request.POST['token']
+                idToken = request.POST['tokenId']
                 request.session['email'] = request.POST['email']
                 request.session['token'] = idToken
                 # request.sessions["email"] = user['idToken']
@@ -44,7 +42,8 @@ def postSingin(request):
                 context = {'userData': user}
                 return render(request, "index.html", context)
                 # return HttpResponseRedirect('https://www.stackoverflow.com', context)
-        except:
+        except Exception as e:
+            print(e)
             pass
         email = request.POST['email']
         password = request.POST['password']
@@ -87,8 +86,6 @@ def logout(request):
 def login_page(request):
     #lets get what we got through this form
     return render(request, 'login.html')
-
-
     try:
         if (request.GET['q']):
             if (request.GET['q'] == "registerOn"):

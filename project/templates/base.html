@@ -16,7 +16,10 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 <script src = "https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+
 <script src="{% static "/js/jquery.min.js" %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <!-- Custom styles for this template -->
 <link href="{% static "/css/mediumish.css" %}" rel="stylesheet">
 <!-- <link href="{% static "/css/login-register.css" %}" rel="newest stylesheet" /> -->
@@ -46,7 +49,7 @@
 			     <a class="nav-link" href="javascript:myFunc()">लेख लेख्नुहोस्</a>
 			</li>
 			<!-- if user is not logged in -->
-					{% if not userData.email %}
+					{% if not userData %}
           <li class="nav-item" id="login_nav" >
 			       <a class="nav-link" href="/awt/login/?q">Login</a>
 			    </li>
@@ -175,16 +178,6 @@ function myFunc() {
 		}
 }
 </script>
-<!-- <script>
-
-if(user_details){
-	dropdown_loggedin_nav.style.display = "block";
-}
-else {
-	login_nav.style.display  = "block";
-}
-</script> -->
-<!-- link click js end -->
 
 <!-- Bootstrap core JavaScript
   ================================================== -->

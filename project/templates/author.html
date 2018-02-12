@@ -1,7 +1,7 @@
 
 {% extends "base.html" %}
 {% block content %}
-<script>
+<!-- <script>
     $( document ).ready(function() {
         if(firebase.auth().currentUser == null) {
           document.location.href = "/";
@@ -23,7 +23,7 @@
 			//   }
 			// });
 });
-</script>
+</script> -->
 <!-- ================================================== -->
 
 <!-- Begin Top Author Page
@@ -137,8 +137,8 @@
 
 		<!-- </div>
 	</div>
-</div> -->
-<!-- End Author Posts
+</div>
+<! End Author Posts
 ================================================== -->
 
 <!-- Begin Twitter Timeline
@@ -331,7 +331,11 @@ ul.tag-list li {
                   <div class="row">
                      <div class="col-xs-12 col-md-10 offset-md-1">
                         <img src="" class="user-img">
-                        <h4>sdulal</h4>
+                        <h4>
+                          <script>
+                            var a = firebase.auth().currentUser.displayName;
+                          </script>
+                        </h4>
                         <p></p>
                         <a class="btn btn-sm btn-outline-secondary action-btn" href="/awt/editProfile">
                            <i class="ion-gear-a"></i><!-- react-text: 667 --> Edit Profile Settings<!-- /react-text -->
@@ -346,7 +350,7 @@ ul.tag-list li {
                   <div class="col-xs-12 col-md-10 offset-md-1">
                      <div class="articles-toggle" style="margin-top: 10px;">
                         <ul class="nav nav-pills outline-active">
-                           <li class="nav-item"><a class="nav-link active" href="#@sdulal">My Articles</a></li>
+                           <li class="nav-item"><a class="nav-link active" href="#">My Articles</a></li>
                            <li class="nav-item"><a class="nav-link " href="#@sdulal/favorites">Favorited Articles</a></li>
                         </ul>
                      </div>
@@ -367,11 +371,11 @@ ul.tag-list li {
                               <span>Read more...</span>
                               <ul class="tag-list pull-right">
 																<li class="tag-default tag-pill tag-outline">pissers</li>
-																<li class="tag-default tag-pill tag-outline">fingerfuckers</li>
-																<li class="tag-default tag-pill tag-outline">Jesusfuck</li>
-																<li class="tag-default tag-pill tag-outline">tittiefuck</li>
-																<li class="tag-default tag-pill tag-outline">motherfuck</li>
-																<li class="tag-default tag-pill tag-outline">cocksucking</li></ul>
+																<li class="tag-default tag-pill tag-outline">xyz</li>
+																<li class="tag-default tag-pill tag-outline">Jesus</li>
+																<li class="tag-default tag-pill tag-outline">tittie</li>
+																<li class="tag-default tag-pill tag-outline">mother</li>
+																<li class="tag-default tag-pill tag-outline">coking</li></ul>
                            </a>
                         </div>
                         <!-- react-empty: 696 -->
@@ -380,10 +384,6 @@ ul.tag-list li {
                </div>
             </div>
          </div>
-   <script src="main.js"></script>
-
-
-
 </body>
 
 {% endblock %}

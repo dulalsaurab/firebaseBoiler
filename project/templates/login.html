@@ -101,24 +101,30 @@
 
 <script>
   $('#google_login').click(function(){
-  // submit the request to the back end
-  signIn();
-  postData =  { csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
-                googleAwth: "True",
-                email: firebase.auth().currentUser.email,
-                displayName: firebase.auth().currentUser.displayName,
-                tokenId: firebase.auth().currentUser.refreshToken
-              };
 
-  $.ajax({
-            type:"POST",
-            url:"/awt/postSingin/",
-            data: postData,
-            success: function(){
-                $('#message').html("<h2>Contact Form Submitted!</h2>")
-            }
-          });
+    signIn(function(){
+
+      //call back is not handled yet, I want below code to exccute only after signIn function exectues completly
+
+      console.log("b");
+      postData =  { csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                    googleAwth: "True",
+                    email: firebase.auth().currentUser.email,
+                    displayName: firebase.auth().currentUser.displayName,
+                    tokenId: firebase.auth().currentUser.refreshToken
+                  };
+
+      $.ajax({
+                type:"POST",
+                url:"/awt/postSingin/",
+                data: postData,
+                success: function(){
+                    $('#message').html("<h2>Contact Form Submitted!</h2>")
+                }
+              });
+    });
   });
+
   $('#facebook_login').click(function(){
   //submit the request to the back end
   });

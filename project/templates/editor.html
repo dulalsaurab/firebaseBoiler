@@ -17,17 +17,17 @@
     <form method="POST" class="post-form">{% csrf_token %}
       <fieldset>
         <fieldset class="form-group">
-          {{ form.title }}
+          {{ userData.form.title }}
         </fieldset>
         <fieldset class="form-group">
-          {{ form.shortInfo }}
+          {{ userData.form.shortInfo }}
         </fieldset>
         <fieldset class="form-group">
-          {{ form.media }}
-          {{ form.text }}
+          {{ userData.form.media }}
+          {{ userData.form.text }}
         </fieldset>
         <fieldset class="form-group">
-          {{ form.tags }}
+          {{ userData.form.tags }}
           <div class="tag-list"></div>
         </fieldset>
         <button class="btn btn-primary pull-right" type="submit">Publish Article</button>
