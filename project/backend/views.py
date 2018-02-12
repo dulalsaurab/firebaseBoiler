@@ -65,13 +65,11 @@ def home_page(request):
             print(request.session['email'])
             a = request.session['email']
             data = {'userData': a }
-    except:
-        data = None
-
-    # if request.method == 'GET':
-    #     print(request.GET['check'])
-    #     print("I reached home page")
-    return render(request, 'index.html', data)
+            user = {'userNmae':request.session['email'], 'email': request.session['email']}
+            context = {'userData': user}
+    except Exception as e:
+        context = None
+    return render(request, 'index.html', context)
 
 def login_page(request):
     print("I reached login_page")

@@ -10,8 +10,8 @@ $( document ).ready(function() {
 					showWelcomeContainer();
 			  } else {
 
-					$("#dropdown_loggedin_nav").hide();
-					$("#login_nav").show();
+					// $("#dropdown_loggedin_nav").hide();
+					// $("#login_nav").show();
 						// document.getElementById("upload").addEventListener('change', handleFileSelect, false);
 					// No user is signed in.
 			  }
@@ -20,6 +20,7 @@ $( document ).ready(function() {
 
 function signIn() {
 	firebase.auth().signInWithPopup(provider).then(function(result) {
+		alert("reached here")
 	  // This gives you a Google Access Token. You can use it to access the Google API.
 	  var token = result.credential.accessToken;
 	  // The signed-in user info.
@@ -51,8 +52,8 @@ function signOut(){
 }
 
 function showWelcomeContainer() {
-	$("#dropdown_loggedin_nav").show();
-	$("#login_nav").hide();
+	// $("#dropdown_loggedin_nav").show();
+	// $("#login_nav").hide();
 
 	// $("#welcomeText").html("Hello, " + user.displayName);
 

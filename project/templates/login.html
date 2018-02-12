@@ -103,19 +103,22 @@
   $('#google_login').click(function(){
   // submit the request to the back end
   signIn();
-  postData =  {csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value, googleAwth: "True"};
+  postData =  { csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                googleAwth: "True",
+                email: firebase.auth().currentUser.email,
+                displayName: firebase.auth().currentUser.displayName,
+                tokenId: firebase.auth().currentUser.refreshToken
+              };
 
   $.ajax({
             type:"POST",
-            url:"/awt/postSingin",
-            data: data,
+            url:"/awt/postSingin/",
+            data: postData,
             success: function(){
                 $('#message').html("<h2>Contact Form Submitted!</h2>")
             }
           });
-
-
-  // });
+  });
   $('#facebook_login').click(function(){
   //submit the request to the back end
   });

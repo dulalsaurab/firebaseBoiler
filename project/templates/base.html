@@ -46,22 +46,27 @@
 			     <a class="nav-link" href="javascript:myFunc()">लेख लेख्नुहोस्</a>
 			</li>
 			<!-- if user is not logged in -->
-          <li class="nav-item" id="login_nav" style="display: block;">
+					{% if not userData.email %}
+          <li class="nav-item" id="login_nav" >
 			       <a class="nav-link" href="/awt/login/?q">Login</a>
 			    </li>
+					{% else %}
+
 					<!-- if user is logged in  -->
-          <!-- <div class="dropdown" id="dropdown_loggedin_nav" style="display: none;">
+          <div class="dropdown" id="dropdown_loggedin_nav" >
             <a href="#" data-toggle="dropdown"
                     class="dropdown-toggle fa fa-user-circle fa-lg" style="vertical-align: -65% !important; margin-left:10px;">
-              <i class="fa fa-user-circle fa-lg" style="vertical-align: -65% !important" aria-hidden="true">
-              </a>
+              <!-- <i class="fa fa-user-circle fa-lg" style="vertical-align: -65% !important" aria-hidden="true"> -->
+            </a>
             <ul class="dropdown-menu">
               <li><a href="/awt/logout" onclick="signOut();">Logout</a></li>
               <li><a href="/author">View Profile</a></li>
-							<li><a href="/author">{{ userData }}</a></li>
+							<li><a href="/author">lmnop</a></li>
 
             </ul>
-          </div> -->
+          </div>
+					{% endif %}
+
 		</ul>
 		<!-- End Menu -->
 		<!-- Begin Search -->
