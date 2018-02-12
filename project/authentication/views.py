@@ -86,7 +86,9 @@ def logout(request):
 # Create your views here.
 def login_page(request):
     #lets get what we got through this form
-    return render(request, 'login.html', {'registerOn':''})
+    return render(request, 'login.html')
+
+
     try:
         if (request.GET['q']):
             if (request.GET['q'] == "registerOn"):

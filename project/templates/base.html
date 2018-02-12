@@ -159,8 +159,9 @@
 
 function myFunc() {
 		// check if a user is logged in or not
-		// var a = "{{userData}}"
-		if(firebase.auth().currentUser.email) {
+		var a = "{{userData}}"
+		// if(firebase.auth().currentUser.email) {
+		if(a) {
 			url = "/editor";
 			document.location.href = url + "/";
 		}

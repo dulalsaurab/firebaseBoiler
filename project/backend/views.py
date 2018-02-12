@@ -81,7 +81,6 @@ def post_page(request):
 
     # get database content
     # Get a reference to the database service
-
     db = views.firebase.database()
     dbArticle = db.child('posts').get()
     articleJson = {'article': dict(dbArticle.val())} #convert into dictonary

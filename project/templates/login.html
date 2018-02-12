@@ -101,22 +101,21 @@
 
 <script>
   $('#google_login').click(function(){
-  //submit the request to the back end
-  // signIn();
-  // postData =  {csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value, googleAwth: "True"};
-  // $.post("localhost:8000/awt/postSingin/", postData);
+  // submit the request to the back end
+  signIn();
+  postData =  {csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value, googleAwth: "True"};
 
-  // $.ajax({
-  //     url: "{% url "/awt/postSingin/" %}",
-  //     type: 'POST',
-  //     data: {csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value, googleAwth: "True"},
-  //     // If sucess, download file
-  //     success: function(data, status, xhr) {
-  //           console.log(data;
-  //     }
+  $.ajax({
+            type:"POST",
+            url:"/awt/postSingin",
+            data: data,
+            success: function(){
+                $('#message').html("<h2>Contact Form Submitted!</h2>")
+            }
+          });
+
+
   // });
-
-  });
   $('#facebook_login').click(function(){
   //submit the request to the back end
   });
